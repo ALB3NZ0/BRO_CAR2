@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище SELLS_CARModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CAR">
+          <Key>
+            <PropertyRef Name="ID_CARNAME" />
+          </Key>
+          <Property Name="ID_CARNAME" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NAME_CAR" Type="varchar" MaxLength="60" Nullable="false" />
+          <Property Name="MODEL_CAR" Type="varchar" MaxLength="60" Nullable="false" />
+          <Property Name="COLOR_CAR" Type="varchar" MaxLength="60" Nullable="false" />
+          <Property Name="NUMBER_CAR" Type="varchar" MaxLength="60" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SUPPLIER">
+          <Key>
+            <PropertyRef Name="ID_SUPPLIER" />
+          </Key>
+          <Property Name="ID_SUPPLIER" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SURNAME" Type="varchar" MaxLength="60" Nullable="false" />
+          <Property Name="SUPPLIER_NAME" Type="varchar" MaxLength="60" Nullable="false" />
+          <Property Name="PATRONYMIC" Type="varchar" MaxLength="60" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WHERE_THE_CAR_COMES_FROM">
+          <Key>
+            <PropertyRef Name="ID_WHERE_THE_CAR_COMES_FROM" />
+          </Key>
+          <Property Name="ID_WHERE_THE_CAR_COMES_FROM" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TITLE" Type="varchar" MaxLength="60" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="Хранилище SELLS_CARModelContainer">
+          <EntitySet Name="CAR" EntityType="Self.CAR" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SUPPLIER" EntityType="Self.SUPPLIER" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WHERE_THE_CAR_COMES_FROM" EntityType="Self.WHERE_THE_CAR_COMES_FROM" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SELLS_CARModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="CAR">
+          <Key>
+            <PropertyRef Name="ID_CARNAME" />
+          </Key>
+          <Property Name="ID_CARNAME" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NAME_CAR" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MODEL_CAR" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="COLOR_CAR" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NUMBER_CAR" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SUPPLIER">
+          <Key>
+            <PropertyRef Name="ID_SUPPLIER" />
+          </Key>
+          <Property Name="ID_SUPPLIER" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SURNAME" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SUPPLIER_NAME" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PATRONYMIC" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WHERE_THE_CAR_COMES_FROM">
+          <Key>
+            <PropertyRef Name="ID_WHERE_THE_CAR_COMES_FROM" />
+          </Key>
+          <Property Name="ID_WHERE_THE_CAR_COMES_FROM" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TITLE" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="SELLS_CAREntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CAR" EntityType="Self.CAR" />
+          <EntitySet Name="SUPPLIER" EntityType="Self.SUPPLIER" />
+          <EntitySet Name="WHERE_THE_CAR_COMES_FROM" EntityType="Self.WHERE_THE_CAR_COMES_FROM" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище SELLS_CARModelContainer" CdmEntityContainer="SELLS_CAREntities">
+          <EntitySetMapping Name="CAR">
+            <EntityTypeMapping TypeName="SELLS_CARModel.CAR">
+              <MappingFragment StoreEntitySet="CAR">
+                <ScalarProperty Name="ID_CARNAME" ColumnName="ID_CARNAME" />
+                <ScalarProperty Name="NAME_CAR" ColumnName="NAME_CAR" />
+                <ScalarProperty Name="MODEL_CAR" ColumnName="MODEL_CAR" />
+                <ScalarProperty Name="COLOR_CAR" ColumnName="COLOR_CAR" />
+                <ScalarProperty Name="NUMBER_CAR" ColumnName="NUMBER_CAR" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SUPPLIER">
+            <EntityTypeMapping TypeName="SELLS_CARModel.SUPPLIER">
+              <MappingFragment StoreEntitySet="SUPPLIER">
+                <ScalarProperty Name="ID_SUPPLIER" ColumnName="ID_SUPPLIER" />
+                <ScalarProperty Name="SURNAME" ColumnName="SURNAME" />
+                <ScalarProperty Name="SUPPLIER_NAME" ColumnName="SUPPLIER_NAME" />
+                <ScalarProperty Name="PATRONYMIC" ColumnName="PATRONYMIC" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WHERE_THE_CAR_COMES_FROM">
+            <EntityTypeMapping TypeName="SELLS_CARModel.WHERE_THE_CAR_COMES_FROM">
+              <MappingFragment StoreEntitySet="WHERE_THE_CAR_COMES_FROM">
+                <ScalarProperty Name="ID_WHERE_THE_CAR_COMES_FROM" ColumnName="ID_WHERE_THE_CAR_COMES_FROM" />
+                <ScalarProperty Name="TITLE" ColumnName="TITLE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
